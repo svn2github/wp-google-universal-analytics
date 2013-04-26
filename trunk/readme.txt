@@ -4,7 +4,7 @@ Donate link: http://onlineads.lt/
 Tags: javascript, tracking, google, analytics, universal, statistics, google analytics, universal analytics
 Requires at least: 2.7
 Tested up to: 3.5.1
-Stable tag: 1.1
+Stable tag: 1.0
 License: GPLv2 or later
 
 Adds the latest Google Universal Analytics JavaScript tracking code to your WordPress website. 
@@ -46,17 +46,11 @@ Also, do not hesitate to contact us if you have any questions regarding [Google 
 
 == Changelog ==
 
-= 1.1 =
-* Documentation updated.
-
 = 1.0 =
+* Documentation updated.
 * Support link added.
 
 == Upgrade Notice ==
-
-= 1.1 =
-
-Documentation updated, not a critical update. 
 
 = 1.0 =
 Support link added. If any questions users can contact us now via plugin's interface.
