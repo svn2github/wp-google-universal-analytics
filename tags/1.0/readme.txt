@@ -42,7 +42,7 @@ Also, do not hesitate to contact us if you have any questions regarding [Google 
 
 == Screenshots ==
 
-1. Modified settings panel with Google Analytics.
+1. Google Analytics and Google Universal Analytics compared.
 
 == Changelog ==
 
