@@ -33,7 +33,7 @@ For more information visit: [Google Analytics](http://www.google.com/analytics) 
 
 = How can I change Web Property ID? =
 
-The same way you entered it the first time: Admin > Settings > Google Analytics
+The same way you entered it the first time: Admin > Settings > Google Universal Analytics
 
 = How can I get support? =
 
