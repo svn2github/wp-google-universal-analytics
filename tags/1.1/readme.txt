@@ -1,5 +1,5 @@
 === Google Universal Analytics ===
-Contributors: Audrius Dobilinskas
+Contributors: audriusd
 Donate link: http://onlineads.lt/
 Tags: javascript, tracking, google, analytics, universal, statistics, google analytics, universal analytics
 Requires at least: 2.7
