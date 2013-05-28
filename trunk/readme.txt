@@ -31,6 +31,11 @@ For more information visit: [Google Analytics](http://www.google.com/analytics) 
 
 == Frequently Asked Questions ==
 
+= How to install Google Analytics for my WordPress blog? =
+
+Follow the link for step-by-step guide: 
+[http://onlineads.lt/how-to-install-google-universal-analytics-for-your-wordpress-blog/](http://onlineads.lt/how-to-install-google-universal-analytics-for-your-wordpress-blog/)
+
 = How can I change Web Property ID? =
 
 The same way you entered it the first time: Admin > Settings > Google Universal Analytics
