@@ -3,7 +3,7 @@ Contributors: audriusd
 Donate link: http://onlineads.lt/
 Tags: javascript, tracking, google, analytics, universal, statistics, google analytics, universal analytics, google universal analytics
 Requires at least: 2.7
-Tested up to: 3.5.2
+Tested up to: 3.8
 Stable tag: 1.2
 License: GPLv2 or later
 
