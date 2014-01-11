@@ -53,7 +53,7 @@ Also, do not hesitate to contact us if you have any questions regarding [Google 
 
 = 1.3 =
 * More options in the plugin settings (admin section). 
-* Big thanks to 'estepix' for code suggestion!
+* Big thanks to estepix for code suggestion!
 
 = 1.2 =
 * Important: After updating enter full tracking code (not just Web Property ID). 
