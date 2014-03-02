@@ -44,21 +44,7 @@
             </div>
           </div>
         </div>
-        <div class="form-group">
-          <div class="col-sm-offset-3 col-sm-9">
-          <?php global $wp_roles;
-     $roles = $wp_roles->get_names(); ?>
-            <div class="checkbox">
-              <label>
-                <input type="checkbox" name="tracking_off_for_role" id="tracking_off_for_role" <?php if(get_option('tracking_off_for_role')=='on'): ?> checked="checked" <?php endif; ?>>
-               Disable Tracking For <select id="tracking_off_for_this_role">
-               	<?php foreach($roles as $role) { ?>
-                <option value="<?php echo $role;?>" <?php if(get_option('tracking_off_for_this_role')== $role){echo 'selected="selected"';} ?>><?php echo $role;?></option>
-                <?php } ?>
-               </select> </label>
-            </div>
-          </div>
-        </div>
+        
         <div class="form-group">
           <div class="col-sm-offset-3 col-sm-9">
             <input type="hidden" id="ajax_url" name="ajax_url" value="<?php echo admin_url('admin-ajax.php'); ?>" />
@@ -68,6 +54,6 @@
       </form>
   </div>
   <div class="clearfix"></div>
-  <div class="row col-lg-6">Have a question? Drop us a question at <a href="http://onlineads.lt/?utm_source=WordPress&utm_medium=Google%20Universal%20Analytics%202.1&utm_content=Google%20Universal%20Analytics&utm_campaign=WordPress%20plugins" title="Google Universal Analytics">OnlineAds.lt</a> </div>
+  <div class="row col-lg-6">Have a question? Drop us a question at <a href="http://onlineads.lt/?utm_source=WordPress&utm_medium=Google%20Universal%20Analytics%202.0&utm_content=Google%20Universal%20Analytics&utm_campaign=WordPress%20plugins" title="Google Universal Analytics">OnlineAds.lt</a> </div>
 </div>
 </br>
