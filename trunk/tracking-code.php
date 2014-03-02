@@ -1,10 +1,10 @@
 <?php
 $web_property_id = 	get_option( 'web_property_id' );
 $track_links 	 =	get_option('track_links');
-$siteurl		 =	get_option('siteurl');
+$homeurl		 =	get_option('home');
 $find = array( 'http://', 'https://', 'www.' );
 $replace = '';
-$siteurl = str_replace( $find, $replace, $siteurl );
+$homeurl = str_replace( $find, $replace, $homeurl );
 ?>
 <!-- Google Universal Analytics for WordPress -->
 <script>
@@ -13,7 +13,7 @@ $siteurl = str_replace( $find, $replace, $siteurl );
 m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
 })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-ga('create', '<?php echo $web_property_id; ?>', '<?php echo $siteurl; ?>');
+ga('create', '<?php echo $web_property_id; ?>', '<?php echo $homeurl; ?>');
 ga('send', 'pageview');
 </script>
 <?php if($track_links=='on'): ?>

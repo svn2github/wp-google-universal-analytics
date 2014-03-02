@@ -1,10 +1,10 @@
 === Google Universal Analytics ===
 Contributors: audriusd
 Donate link: http://onlineads.lt/
-Tags: javascript, tracking, google, analytics, universal, statistics, google analytics, universal analytics, google universal analytics, classic
+Tags: javascript, tracking, google, analytics, universal, statistics, google analytics, universal analytics, google universal analytics, classic, custom
 Requires at least: 3.0
 Tested up to: 3.8.1
-Stable tag: 2.0
+Stable tag: 2.1
 License: GPLv2 or later
 
 Adds the latest Google Universal Analytics JavaScript tracking code to your WordPress website. Event tracking is now available.
@@ -60,6 +60,11 @@ Also, do not hesitate to contact us if you have any questions regarding [Google 
 
 == Changelog ==
 
+= 2.1 =
+* Fixed issues affecting some of the websites using this plugin.
+* Ability to disable tracking for certain roles added.
+* Custom Google Analytics option added (as a separate page). 
+
 = 2.0 =
 * Completelly updated the whole plugin.
 * Events tracking is now available.
@@ -74,12 +79,16 @@ Also, do not hesitate to contact us if you have any questions regarding [Google 
 
 = 1.1 =
 * Minor fix in tracking code.
+* Documentation updated.
+* Support link added
 
 = 1.0 =
-* Documentation updated.
-* Support link added.
+* Initial release.
 
 == Upgrade Notice ==
+
+= 2.1 =
+* Bug fixes and new features like role based tracking and custom Analytics option. 
 
 = 2.0 =
 * Important upgrade. More options added. More powerful than ever before!
@@ -94,4 +103,4 @@ Also, do not hesitate to contact us if you have any questions regarding [Google 
 Tracking code updated. 
 
 = 1.0 =
-Support link added. If any questions users can contact us now via plugin's interface.
+Initial release. 
