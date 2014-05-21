@@ -64,7 +64,7 @@ Also, do not hesitate to contact us if you have any questions regarding [Google 
 
 = 2.3.0.2 =
 * Bug fixed: Save settings issue
-* Big fixed: WooCommerce issue
+* Bug fixed: WooCommerce issue
 
 = 2.3 =
 * WooCommerce e-commerce tracking added (beta).
