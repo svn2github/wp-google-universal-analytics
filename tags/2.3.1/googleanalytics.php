@@ -83,8 +83,8 @@ function deactive_google_universal_analytics() {
   delete_option('enable_display');
   delete_option('anonymize_ip');
   delete_option('woo_tracking');
-  register_setting('google-universal-settings','set_domain');
-  register_setting('google-universal-settings','set_domain_domain');
+  delete_option('set_domain');
+  delete_option('set_domain_domain');
   delete_option('tracking_off_for_this_role');
   delete_option('tracking_off_for_role');
 
@@ -454,7 +454,50 @@ function display_google_universal_analytics_code(){
 }
 //adding woo tracking
 
-$var1	=	'require "woo_code.php";';
+//$var1	=	'require "woo_code.php";';
+
+$var1	=	'function ia_wc_ga_integration( $order_id ) {
+	$order = new WC_Order( $order_id ); ?>
+	
+	<script type="text/javascript">
+	ga("require", "ecommerce", "ecommerce.js"); // Load The Ecommerce Tracking Plugin
+		
+		// Transaction Details
+		ga("ecommerce:addTransaction", {
+			"id": "<?php echo $order_id;?>",
+			"affiliation": "<?php echo get_option( "blogname" );?>",
+			"revenue": "<?php echo $order->get_total();?>",
+			"shipping": "<?php echo $order->get_total_shipping();?>",
+			"tax": "<?php echo $order->get_total_tax();?>",
+			"currency": "<?php echo get_woocommerce_currency();?>"
+		});
+
+	
+	<?php
+		//Item Details
+	if ( sizeof( $order->get_items() ) > 0 ) {
+		foreach( $order->get_items() as $item ) {
+			$product_cats = get_the_terms( $item["product_id"], "product_cat" );
+				if ($product_cats) { 
+					$cat = $product_cats[0];
+				} ?>
+			ga("ecommerce:addItem", {
+				"id": "<?php echo $order_id;?>",
+				"name": "<?php echo $item["name"];?>",
+				"sku": "<?php echo get_post_meta($item["product_id"], "_sku", true);?>",
+				"category": "<?php echo $cat->name;?>",
+				"price": "<?php echo $item["line_subtotal"];?>",
+				"quantity": "<?php echo $item["qty"];?>",
+				"currency": "<?php echo get_woocommerce_currency();?>"
+			});
+	<?php
+		}	
+	} ?>
+		ga("ecommerce:send");
+		</script>
+<?php }
+add_action( "woocommerce_thankyou", "ia_wc_ga_integration" );';
+
 $get_func_file_path	=	get_template_directory().'/functions.php';
 if(get_option('woo_tracking')=='on'){
 	if(strpos(file_get_contents($get_func_file_path),$var1) !== false){
