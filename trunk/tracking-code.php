@@ -1,19 +1,16 @@
 <?php
 
 $web_property_id = 	get_option( 'web_property_id' );
-
 $track_links 	 =	get_option('track_links');
-
 $enable_display 	 =	get_option('enable_display');
-
 $anonymize_ip 	 =	get_option('anonymize_ip');
-
-$homeurl		 =	get_option('home');
-
+if(get_option('set_domain')=='on'){
+	$homeurl		 =	get_option('set_domain_domain');
+}else{
+	$homeurl		 =	get_option('home');
+}
 $find = array( 'http://', 'https://', 'www.' );
-
 $replace = '';
-
 $homeurl = str_replace( $find, $replace, $homeurl );
 
 ?>

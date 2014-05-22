@@ -55,6 +55,6 @@
     </form>
   </div>
   <div class="clearfix"></div>
-  <div class="row col-lg-6">Have a question? Drop us a question at <a href="http://onlineads.lt/?utm_source=WordPress&utm_medium=Google%20Universal%20Analytics%202.3.0.2&utm_content=Google%20Custom%20Analytics&utm_campaign=WordPress%20plugins">OnlineAds.lt</a> </div>
+  <div class="row col-lg-6">Have a question? Drop us a question at <a href="http://onlineads.lt/?utm_source=WordPress&utm_medium=Google%20Universal%20Analytics%202.3.1&utm_content=Google%20Custom%20Analytics&utm_campaign=WordPress%20plugins">OnlineAds.lt</a> </div>
 </div>
 </br>

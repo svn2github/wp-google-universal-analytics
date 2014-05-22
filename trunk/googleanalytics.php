@@ -5,7 +5,7 @@
 Plugin Name: Google Universal Analytics
 Plugin URI: http://wordpress.org/extend/plugins/google-universal-analytics/
 Description: Adds <a href="http://www.google.com/analytics/">Google Analytics</a> tracking code on all pages.
-Version: 2.3.0.2
+Version: 2.3.1
 Author: Audrius Dobilinskas
 Author URI: http://onlineads.lt/
 
@@ -42,6 +42,8 @@ function register_plugin_settings(){
 	register_setting('google-universal-settings','enable_display');
 	register_setting('google-universal-settings','anonymize_ip');
 	register_setting('google-universal-settings','woo_tracking');
+	register_setting('google-universal-settings','set_domain');
+	register_setting('google-universal-settings','set_domain_domain');
 	register_setting('google-universal-settings','tracking_off_for_this_role');
 	register_setting('google-universal-settings','tracking_off_for_role');
 	
@@ -81,6 +83,8 @@ function deactive_google_universal_analytics() {
   delete_option('enable_display');
   delete_option('anonymize_ip');
   delete_option('woo_tracking');
+  delete_option('set_domain');
+  delete_option('set_domain_domain');
   delete_option('tracking_off_for_this_role');
   delete_option('tracking_off_for_role');
 
@@ -224,7 +228,8 @@ function google_universal_analytics_scripts($hook){
 		//register scripts
 
 		wp_register_script( 'google-js', '//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js', array(), '', true );
-		wp_register_script( 'bootstrap-switch-js', plugins_url( 'google-universal-analytics/bootstrap/js/bootstrap-switch.min.js' , dirname(__FILE__) ) , array('google-js'),'',true );
+		wp_register_script( 'bootstrap-js', plugins_url( 'google-universal-analytics/bootstrap/js/bootstrap.min.js' , dirname(__FILE__) ), array('google-js'), '', true );
+		wp_register_script( 'bootstrap-switch-js', plugins_url( 'google-universal-analytics/bootstrap/js/bootstrap-switch.min.js' , dirname(__FILE__) ) , array('bootstrap-js'),'',true );
 		wp_register_script( 'main-js', plugins_url( 'google-universal-analytics/assets/gua-main.js' , dirname(__FILE__) ) , array('google-js'),'',true );
 
 		
@@ -233,7 +238,7 @@ function google_universal_analytics_scripts($hook){
 
 		//enqueue styles
 
-		//wp_enqueue_style( 'bootstrap-css' );
+		wp_enqueue_style( 'bootstrap-css' );
 		wp_enqueue_style( 'bootstrap-switch-css' );
 		wp_enqueue_style( 'main-css' );
 
@@ -242,7 +247,7 @@ function google_universal_analytics_scripts($hook){
 		//enqueue scripts
 
 		wp_enqueue_script( 'google-js' );
-		//wp_enqueue_script( 'bootstrap-js' );
+		wp_enqueue_script( 'bootstrap-js' );
 		wp_enqueue_script( 'bootstrap-switch-js' );
 		wp_enqueue_script( 'main-js' );
 
@@ -447,137 +452,52 @@ function display_google_universal_analytics_code(){
 
 
 }
-
-
-
-
-
-
-
-function save_google_universal_analytics_settings() {
-	// The $_REQUEST contains all the data sent via ajax
-	if ( isset($_REQUEST) ) {
-		$property_id = $_REQUEST['property_id'];
-		$in_footer = $_REQUEST['in_footer'];
-		$plugin_switch = $_REQUEST['plugin_switch'];
-		$track_links = $_REQUEST['track_links'];
-		$enable_display = $_REQUEST['enable_display'];
-		$anonymize_ip = $_REQUEST['anonymize_ip'];
-		$woo_tracking = $_REQUEST['woo_tracking'];
-		$tracking_off_for_this_role = $_REQUEST['tracking_off_for_this_role'];
-		$tracking_off_for_role = $_REQUEST['tracking_off_for_role'];
-
-		
-
-		
-
-		update_option('web_property_id', $property_id);
-  		update_option('in_footer', $in_footer);
- 		update_option('plugin_switch', $plugin_switch);
-		update_option('track_links', $track_links);
-		update_option('enable_display', $enable_display);
-		update_option('anonymize_ip', $anonymize_ip);
-		update_option('woo_tracking', $woo_tracking);
-		update_option('tracking_off_for_this_role', $tracking_off_for_this_role);
-		update_option('tracking_off_for_role', $tracking_off_for_role);
-
-	}
-
-	// Always die in functions echoing ajax content
-
-   die();
-
-}
-
-
-
-function save_google_classic_analytics_settings() {
-
-	// The $_REQUEST contains all the data sent via ajax
-
-	if ( isset($_REQUEST) ) {
-
-		$classic_property_id = $_REQUEST['classic_property_id'];
-		$classic_in_footer = $_REQUEST['classic_in_footer'];
-		$classic_plugin_switch = $_REQUEST['classic_plugin_switch'];
-		$classic_tracking_off_for_role = $_REQUEST['classic_tracking_off_for_role'];
-		$classic_tracking_off_for_this_role = $_REQUEST['classic_tracking_off_for_this_role'];
-
-		
-
-		
-
-		update_option('classic_property_id', $classic_property_id);
-
-  		update_option('classic_in_footer', $classic_in_footer);
-
- 		update_option('classic_plugin_switch', $classic_plugin_switch);
-
-		update_option('classic_tracking_off_for_role', $classic_tracking_off_for_role);
-
-		update_option('classic_tracking_off_for_this_role', $classic_tracking_off_for_this_role);
-
-	}
-
-	// Always die in functions echoing ajax content
-
-   die();
-
-}
-
-function save_google_custom_analytics_settings() {
-
-	// The $_REQUEST contains all the data sent via ajax
-
-	if ( isset($_REQUEST) ) {
-
-		$custom_in_footer = $_REQUEST['custom_in_footer'];
-
-		$custom_plugin_switch = $_REQUEST['custom_plugin_switch'];
-
-		$custom_web_property_id = $_REQUEST['custom_web_property_id'];
-
-		$custom_web_property_id	=	stripslashes($custom_web_property_id);
-
-		$custom_tracking_off_for_role = $_REQUEST['custom_tracking_off_for_role'];
-
-		$custom_tracking_off_for_this_role = $_REQUEST['custom_tracking_off_for_this_role'];
-
-		
-
-		
-
-		update_option('custom_in_footer', $custom_in_footer);
-
-  		update_option('custom_plugin_switch', $custom_plugin_switch);
-
- 		update_option('custom_web_property_id', $custom_web_property_id);
-
-		update_option('custom_tracking_off_for_role', $custom_tracking_off_for_role);
-
-		update_option('custom_tracking_off_for_this_role', $custom_tracking_off_for_this_role);
-
-	}
-
-	// Always die in functions echoing ajax content
-
-   die();
-
-}
-
-
-
-
-
-add_action( 'wp_ajax_save_google_universal_analytics_settings', 'save_google_universal_analytics_settings' );
-add_action( 'wp_ajax_save_google_classic_analytics_settings', 'save_google_classic_analytics_settings' );
-add_action( 'wp_ajax_save_google_custom_analytics_settings', 'save_google_custom_analytics_settings' );
-
-
-
 //adding woo tracking
 
-$var1	=	'require "woo_code.php";';
+//$var1	=	'require "woo_code.php";';
+
+$var1	=	'function ia_wc_ga_integration( $order_id ) {
+	$order = new WC_Order( $order_id ); ?>
+	
+	<script type="text/javascript">
+	ga("require", "ecommerce", "ecommerce.js"); // Load The Ecommerce Tracking Plugin
+		
+		// Transaction Details
+		ga("ecommerce:addTransaction", {
+			"id": "<?php echo $order_id;?>",
+			"affiliation": "<?php echo get_option( "blogname" );?>",
+			"revenue": "<?php echo $order->get_total();?>",
+			"shipping": "<?php echo $order->get_total_shipping();?>",
+			"tax": "<?php echo $order->get_total_tax();?>",
+			"currency": "<?php echo get_woocommerce_currency();?>"
+		});
+
+	
+	<?php
+		//Item Details
+	if ( sizeof( $order->get_items() ) > 0 ) {
+		foreach( $order->get_items() as $item ) {
+			$product_cats = get_the_terms( $item["product_id"], "product_cat" );
+				if ($product_cats) { 
+					$cat = $product_cats[0];
+				} ?>
+			ga("ecommerce:addItem", {
+				"id": "<?php echo $order_id;?>",
+				"name": "<?php echo $item["name"];?>",
+				"sku": "<?php echo get_post_meta($item["product_id"], "_sku", true);?>",
+				"category": "<?php echo $cat->name;?>",
+				"price": "<?php echo $item["line_subtotal"];?>",
+				"quantity": "<?php echo $item["qty"];?>",
+				"currency": "<?php echo get_woocommerce_currency();?>"
+			});
+	<?php
+		}	
+	} ?>
+		ga("ecommerce:send");
+		</script>
+<?php }
+add_action( "woocommerce_thankyou", "ia_wc_ga_integration" );';
+
 $get_func_file_path	=	get_template_directory().'/functions.php';
 if(get_option('woo_tracking')=='on'){
 	if(strpos(file_get_contents($get_func_file_path),$var1) !== false){

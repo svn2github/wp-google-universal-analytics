@@ -4,7 +4,7 @@ Donate link: http://onlineads.lt/
 Tags: javascript, tracking, google, analytics, universal, statistics, google analytics, universal analytics, google universal analytics, classic, custom, woocommerce, ecommerce
 Requires at least: 3.0
 Tested up to: 3.9.1
-Stable tag: 2.3.0.2
+Stable tag: 2.3.1
 License: GPLv2 or later
 
 Adds the latest Google Universal Analytics JavaScript tracking code to your WordPress website. Now supports WooCommerce!
@@ -62,6 +62,9 @@ Also, do not hesitate to contact us if you have any questions regarding [Google 
 
 == Changelog ==
 
+= 2.3.1 =
+* Now it is possible to set domain manually.
+
 = 2.3.0.2 =
 * Bug fixed: Save settings issue
 * Bug fixed: WooCommerce issue
@@ -106,6 +109,9 @@ Also, do not hesitate to contact us if you have any questions regarding [Google 
 * Initial release.
 
 == Upgrade Notice ==
+
+= 2.3.1 =
+* New feature: set domain manually
 
 = 2.3.0.2 =
 * Bugs fixed: Save settings issue and WooCommerce tracking
