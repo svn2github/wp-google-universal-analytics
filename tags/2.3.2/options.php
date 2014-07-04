@@ -93,5 +93,9 @@
   </div>
   <div class="clearfix"></div>
   <div class="row col-lg-6"><?php echo __('Have a question? Drop us a question at', 'gua'); ?> <a href="http://onlineads.lt/?utm_source=WordPress&utm_medium=Google%20Universal%20Analytics%202.3.2&utm_content=Google%20Universal%20Analytics&utm_campaign=WordPress%20plugins" title="Google Universal Analytics">OnlineAds.lt</a> </div>
+  
+  </br></br>
+  <strong>Pro Tip:</strong> For periodic website performance tracking and reporting use <a href="https://nexusad.com/?utm_source=wordpress&utm_medium=Google%2BUniversal%2BAnalytics%2B2.3.2&utm_campaign=wp_plugins" title="nexusAd" target="_blank">nexusAd reporting tool</a>.
+  
 </div>
 </br>

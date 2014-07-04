@@ -55,6 +55,10 @@ Also, do not hesitate to contact us if you have any questions regarding [Google 
 
 [Submit your idea at our website](http://onlineads.lt/contact-us/).
 
+= How can I subscribe to periodic Google Analytics reports? =
+
+Check it out [nexusAd tool](https://nexusad.com]
+
 == Screenshots ==
 
 1. Google Universal Analytics plugin interface with additional options.
@@ -148,4 +152,4 @@ Also, do not hesitate to contact us if you have any questions regarding [Google 
 Tracking code updated. 
 
 = 1.0 =
-Initial release. 
+* Initial release. 
