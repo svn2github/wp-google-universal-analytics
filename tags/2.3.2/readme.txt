@@ -57,7 +57,7 @@ Also, do not hesitate to contact us if you have any questions regarding [Google 
 
 = How can I subscribe to periodic Google Analytics reports? =
 
-Check it out [nexusAd tool](https://nexusad.com]
+Check it out [nexusAd tool](https://nexusad.com).
 
 == Screenshots ==
 
