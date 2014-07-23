@@ -15,7 +15,7 @@ Adding Google Analytics code to your website has never been easier. Simply copy 
 
 Why Google Universal Analytics is better than the usual Google Analytics? 
 
-* Event tracking (track downloads, mailto links and clicks on external URLs);
+* Event tracking (track downloads, mailto links, clicks on external URLs and Call tracking);
 * Remarketing;
 * Demographics and Interests reporting;
 * IP Anonymization;
