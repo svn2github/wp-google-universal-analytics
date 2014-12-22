@@ -3,7 +3,7 @@ Contributors: audriusd
 Donate link: http://onlineads.lt/
 Tags: javascript, tracking, google, analytics, universal, statistics, google analytics, universal analytics, user id, google universal analytics, classic, custom, nexusad
 Requires at least: 3.0
-Tested up to: 4.0.1
+Tested up to: 4.1
 Stable tag: 2.4.2
 License: GPLv2 or later
 

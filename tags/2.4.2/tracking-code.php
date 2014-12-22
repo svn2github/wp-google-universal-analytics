@@ -20,7 +20,7 @@ global $current_user;
       get_currentuserinfo();
 ?>
 
-<!-- Google Universal Analytics for WordPress v2.4 -->
+<!-- Google Universal Analytics for WordPress v2.4.2 -->
 
 <script>
 
